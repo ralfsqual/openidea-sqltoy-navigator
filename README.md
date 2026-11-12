@@ -2,6 +2,10 @@
 
 Jump between Java sqlId strings and their SqlToy XML SQL definitions.
 
+Source: [GitHub](https://github.com/ralfsqual/openidea-sqltoy-navigator) ·
+[Gitee mirror](https://gitee.com/ralfsqual/openidea-sqltoy-navigator) ·
+Marketplace PR: [l0ng-ai/openidea-plugins#131](https://github.com/l0ng-ai/openidea-plugins/pull/131)
+
 Java 代码通过字符串引用 SqlToy SQL——`sqlToyLazyDao.findBySql("app_order_list", …)`，
 SQL 定义在 `*.sql.xml` 文件的 `<sql id="app_order_list">` 里。本插件在两者之间建立索引，
 让 Go to Definition、Ctrl/⌘-Click、Find Usages、Rename 跨 Java/XML 边界解析，
