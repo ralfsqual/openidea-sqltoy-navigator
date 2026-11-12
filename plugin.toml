@@ -1,0 +1,34 @@
+id = "ritsu.sqltoy-navigator"
+name = "SqlToy Navigator"
+version = "0.1.0"
+description = "Jumps between Java sqlId strings (SqlToyLazyDao.findBySql & friends) and their XML <sql id> definitions in *.sql.xml files: Go to Definition, gutter arrows, sqlId completion, and an error when a referenced sqlId does not exist."
+authors = ["Ritsu"]
+license = "Apache-2.0"
+categories = ["frameworks"]
+engines.openidea = "^1.4"
+wasm = "dist/plugin.wasm"
+activation = ["on-language:java", "on-language:xml"]
+
+[capabilities]
+required = ["project.read", "editor.read"]
+
+[[contributes.documentIndexers]]
+extensions = ["java", "xml"]
+
+[[contributes.providers]]
+kinds = ["definition", "line-markers", "completion", "diagnostics"]
+languages = ["*"]
+
+[[contributes.commands]]
+id = "goto-xml"
+title = "SqlToy Navigator: Go to XML SQL Definition"
+category = "SqlToy Navigator"
+
+[[contributes.commands]]
+id = "find-usages"
+title = "SqlToy Navigator: Find Java Usages of This sqlId"
+category = "SqlToy Navigator"
+
+[[contributes.menus]]
+menu = "editor.context"
+command = "find-usages"
